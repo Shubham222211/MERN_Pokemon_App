@@ -19,6 +19,9 @@ app.use(express.json())
 app.use('/pokemon',PokemonRouter)
 
 
+
+
+
 app.get("/",(req,res)=>{
 
     res.send('server is running fine for pokemon')

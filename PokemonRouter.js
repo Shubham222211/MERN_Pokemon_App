@@ -36,5 +36,14 @@ pokemonRouter.post('/create', async (req, res) => {
 });
 
 
+pokemonRouter.get('/getdata', async (req, res) => {
+  try {
+    const pokemonList = await pokemonModel.find();
+    res.status(200).send(pokemonList);
+  } catch (error) {
+    res.status(500).send({ message: 'Error fetching Pokémon data', error });
+  }
+});
+
 
 module.exports=pokemonRouter
